@@ -1,0 +1,60 @@
+# Byte-compiled / cached files
+__pycache__/
+*.py[cod]
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Environment
+env/
+venv/
+ENV/
+
+# IDE config
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Models and weights
+*.h5
+*.keras
+*.pt
+*.pth
+*.onnx
+
+# Common dataset folder patterns
+DATASET*/
+*DATASET*/
+*dataset*/
+New-Dataset/
+
+# Specific dataset folders in this workspace
+"CNN MODEL/DATASET AWAL/"
+"CNN MODEL/DATASET CROPING/"
+"CNN MODEL/DATASET AWAL/**"
+"CNN MODEL/DATASET CROPING/**"
+
+# Training/testing dataset folders
+*/training-dataset-*/
+*/testing-dataset-*/
+
+# YOLO and other training outputs
+runs/
+train/
+valid/
+test/
+testing-input-image/
+testing-yolo/
+
+# Large or generated model directories
+MODEL/
+"CNN MODEL/MODEL/"
+
+# Notebook files (if you want to keep some notebooks locally, remove this)
+*.ipynb
+
+# Sensitive or local env files
+.env
