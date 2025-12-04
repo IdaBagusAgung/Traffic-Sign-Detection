@@ -5,17 +5,17 @@
 [![YOLOv8](https://img.shields.io/badge/YOLOv8-Ultralytics-red)](https://ultralytics.com/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0-orange)](https://pytorch.org/)
 
-## 📋 Deskripsi
+## 📋 Description
 
-Project ini mengimplementasikan sistem deteksi rambu lalu lintas Indonesia menggunakan YOLOv8 (You Only Look Once version 8). Berbeda dengan klasifikasi pada DSP CNN, project ini fokus pada **object detection** yang dapat mendeteksi multiple rambu dalam satu gambar sekaligus memberikan lokasi (bounding box) dari setiap rambu.
+This project implements an Indonesian traffic sign detection system using YOLOv8 (You Only Look Once version 8). Unlike classification in DSP CNN, this project focuses on **object detection** which can detect multiple signs in one image while providing the location (bounding box) of each sign.
 
-## 🎯 Tujuan Project
+## 🎯 Project Objectives
 
-1. Mendeteksi dan melokalisasi rambu lalu lintas dalam gambar
-2. Mengidentifikasi multiple objects dalam satu frame
-3. Real-time detection dengan high accuracy
-4. Mencapai high precision dan recall
-5. Membangun dashboard interaktif untuk testing
+1. Detect and localize traffic signs in images
+2. Identify multiple objects in one frame
+3. Real-time detection with high accuracy
+4. Achieve high precision and recall
+5. Build an interactive dashboard for testing
 
 ## 🌟 Key Features
 
@@ -162,17 +162,17 @@ names: ['lampu-hijau', 'lampu-kuning', 'lampu-merah',
 ```
 
 ### Label Generation
-Labels harus dalam format YOLO:
-- class_id: index kategori (0-indexed)
-- x_center, y_center: koordinat center (normalized)
-- width, height: ukuran box (normalized)
+Labels must be in YOLO format:
+- class_id: category index (0-indexed)
+- x_center, y_center: center coordinates (normalized)
+- width, height: box size (normalized)
 
 ## 🚀 Training Process
 
-### 1. Persiapan Dataset
+### 1. Dataset Preparation
 ```python
-# Dataset structure sudah sesuai
-# Pastikan data.yaml pointing ke path yang benar
+# Dataset structure is already correct
+# Make sure data.yaml points to the correct path
 ```
 
 ### 2. Training Command
@@ -195,29 +195,29 @@ results = model.train(
 ### 3. Training Notebooks
 
 #### DSP-YOLO.ipynb - Main Training
-Notebook utama berisi:
-- ✅ Setup dataset dan mount Google Drive
+Main notebook contains:
+- ✅ Dataset setup and Google Drive mounting
 - ✅ Import libraries
-- ✅ Dataset exploration dan visualization
+- ✅ Dataset exploration and visualization
 - ✅ Pretrained model testing
 - ✅ GPU checking
 - ✅ Full training pipeline (100 epochs)
 - ✅ Confusion matrix analysis
 - ✅ Training curves visualization
 - ✅ Model evaluation
-- ✅ Testing dengan test dataset
+- ✅ Testing with test dataset
 - ✅ Interactive image upload widget
 
 #### YOLO_TESTING_1.ipynb - Testing
-Notebook untuk testing:
-- Testing pada custom images
+Notebook for testing:
+- Testing on custom images
 - Batch prediction
 - Confidence threshold tuning
 - IoU threshold tuning
 
 ### 4. Training Iterations
-Project ini melakukan iterative training:
-- **train1-train11**: Eksperimen awal (berbagai hyperparameters)
+This project performs iterative training:
+- **train1-train11**: Initial experiments (various hyperparameters)
 - **train12**: Best model (100 epochs, optimal hyperparameters)
 - **train1210-train1221**: Fine-tuning experiments
 
@@ -248,9 +248,9 @@ Dropout: 0.15
 
 ### Per-Class Performance
 Best performing classes:
-- Lampu Merah: ~95% precision
-- Larangan Parkir: ~92% precision
-- Larangan Berhenti: ~90% precision
+- Red Light: ~95% precision
+- No Parking: ~92% precision
+- No Stopping: ~90% precision
 
 ## 📊 Visualization & Analysis
 
@@ -310,7 +310,7 @@ streamlit run DashboardGabung.py
 ```
 
 **Features:**
-- Pilih model: CNN Classification atau YOLO Detection
+- Select model: CNN Classification or YOLO Detection
 - CNN: Single object classification
 - YOLO: Multiple object detection
 - Side-by-side comparison
@@ -329,7 +329,7 @@ streamlit run DashboardGabung.py
 
 ## 🧪 Testing & Prediction
 
-### 1. Testing pada Test Dataset
+### 1. Testing on Test Dataset
 ```python
 # Load best model
 model = YOLO('runs/detect/train12/weights/best.pt')
@@ -540,7 +540,7 @@ model.export(format='saved_model')
 
 ## 🤝 Contributing
 
-Kontribusi sangat welcome! Untuk berkontribusi:
+Contributions are very welcome! To contribute:
 1. Fork repository
 2. Create feature branch
 3. Commit changes
@@ -557,21 +557,21 @@ Kontribusi sangat welcome! Untuk berkontribusi:
 
 ## 📞 Contact & Support
 
-Untuk pertanyaan, bug reports, atau feature requests:
-- Open an issue di GitHub
+For questions, bug reports, or feature requests:
+- Open an issue on GitHub
 - Email: [your.email@example.com]
 
 ## 🙏 Acknowledgments
 
-- Ultralytics team untuk YOLOv8
-- Google Colab untuk free GPU access
+- Ultralytics team for YOLOv8
+- Google Colab for free GPU access
 - Dataset contributors
-- Dosen dan asisten DSP course
+- DSP course lecturers and assistants
 - Open-source community
 
 ## 📄 License
 
-Project ini dibuat untuk keperluan akademik (Data Science Programming Course).
+This project was created for academic purposes (Data Science Programming Course).
 
 ---
 

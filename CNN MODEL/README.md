@@ -5,19 +5,19 @@
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)](https://www.tensorflow.org/)
 [![Keras](https://img.shields.io/badge/Keras-API-red)](https://keras.io/)
 
-## 📋 Deskripsi
+## 📋 Description
 
-Project ini mengimplementasikan sistem klasifikasi rambu lalu lintas Indonesia menggunakan Convolutional Neural Network (CNN). Project ini mengeksplorasi berbagai arsitektur CNN dan teknik preprocessing untuk mendapatkan hasil terbaik.
+This project implements an Indonesian traffic sign classification system using Convolutional Neural Network (CNN). The project explores various CNN architectures and preprocessing techniques to achieve the best results.
 
-## 🎯 Tujuan Project
+## 🎯 Project Objectives
 
-1. Mengklasifikasikan rambu lalu lintas Indonesia ke dalam 15+ kategori
-2. Membandingkan performa berbagai arsitektur CNN:
+1. Classify Indonesian traffic signs into 15+ categories
+2. Compare the performance of various CNN architectures:
    - Custom CNN (built from scratch)
-   - Transfer Learning dengan MobileNet
-   - Transfer Learning dengan VGG16
-3. Menganalisis pengaruh preprocessing (cropping vs non-cropping)
-4. Membangun dashboard interaktif untuk prediksi real-time
+   - Transfer Learning with MobileNet
+   - Transfer Learning with VGG16
+3. Analyze the impact of preprocessing (cropping vs non-cropping)
+4. Build an interactive dashboard for real-time prediction
 
 ## 📁 Struktur Folder
 
@@ -63,28 +63,28 @@ DSP CNN/
 └── DBS/                          # Additional resources
 ```
 
-## 🚀 Kategori Rambu Lalu Lintas
+## 🚀 Traffic Sign Categories
 
-Project ini dapat mengklasifikasikan rambu-rambu berikut:
+This project can classify the following signs:
 
-### Lampu Lalu Lintas
-- 🟢 Lampu Hijau
-- 🟡 Lampu Kuning  
-- 🔴 Lampu Merah
+### Traffic Lights
+- 🟢 Green Light
+- 🟡 Yellow Light  
+- 🔴 Red Light
 
-### Rambu Larangan
-- 🚫 Larangan Parkir
-- 🚫 Larangan Berhenti
-- 🚫 Larangan Belok Kanan
-- 🚫 Larangan Belok Kiri
-- 🚫 Larangan Memutar Balik
-- 🚫 Larangan Masuk Kendaraan Bermotor
-- 🚫 Larangan Berjalan Terus (Wajib Berhenti Sesaat)
+### Prohibition Signs
+- 🚫 No Parking
+- 🚫 No Stopping
+- 🚫 No Right Turn
+- 🚫 No Left Turn
+- 🚫 No U-Turn
+- 🚫 No Entry for Motor Vehicles
+- 🚫 No Straight Ahead (Must Stop Momentarily)
 
-### Rambu Peringatan
-- ⚠️ Peringatan Alat Pemberi Isyarat Lalu Lintas
-- ⚠️ Peringatan Banyak Pejalan Kaki (Zebra Cross)
-- ⚠️ Peringatan Penegasan Rambu Tambahan
+### Warning Signs
+- ⚠️ Traffic Signal Warning
+- ⚠️ Pedestrian Crossing Warning (Zebra Cross)
+- ⚠️ Additional Sign Warning
 
 ## 🛠️ Requirements
 
@@ -175,26 +175,26 @@ ImageDataGenerator(
 ```
 
 ### Cropping Experiments
-Project ini membandingkan 4 skenario:
-1. **Train Crop - Test Crop**: Dataset di-crop pada training dan testing
-2. **Train Crop - Test No Crop**: Training dengan cropped, testing original
-3. **Train No Crop - Test Crop**: Training original, testing cropped
-4. **Train No Crop - Test No Crop**: Semua menggunakan original size
+This project compares 4 scenarios:
+1. **Train Crop - Test Crop**: Dataset cropped for both training and testing
+2. **Train Crop - Test No Crop**: Training with cropped, testing with original
+3. **Train No Crop - Test Crop**: Training with original, testing with cropped
+4. **Train No Crop - Test No Crop**: All using original size
 
 ## 📈 Training Process
 
 ### Training Workflow
-1. **Data Loading**: Load dan split dataset (80% train, 20% test)
+1. **Data Loading**: Load and split dataset (80% train, 20% test)
 2. **Preprocessing**: Resize, normalize, augmentation
-3. **Model Building**: Pilih dan compile model
-4. **Training**: Train dengan callbacks (ModelCheckpoint, EarlyStopping)
-5. **Evaluation**: Test pada test set
-6. **Save Model**: Simpan best model
+3. **Model Building**: Select and compile model
+4. **Training**: Train with callbacks (ModelCheckpoint, EarlyStopping)
+5. **Evaluation**: Test on test set
+6. **Save Model**: Save best model
 
 ### Training Notebooks
 - **DSP-CNN.ipynb**: Main training pipeline
-- **DBS-CNN.ipynb**: Eksperimen berbagai konfigurasi
-- **REVISI-DSP-CNN.ipynb**: Improvement dan fine-tuning
+- **DBS-CNN.ipynb**: Various configuration experiments
+- **REVISI-DSP-CNN.ipynb**: Improvements and fine-tuning
 
 ### Training Commands
 ```python
@@ -250,10 +250,10 @@ streamlit run Dashboard.py
 
 ## 📖 How to Use
 
-### 1. Training Model Baru
+### 1. Training New Model
 ```python
-# Buka notebook DSP-CNN.ipynb
-# Follow step-by-step cells untuk:
+# Open notebook DSP-CNN.ipynb
+# Follow step-by-step cells for:
 # 1. Load dataset
 # 2. Preprocessing
 # 3. Build model
@@ -261,7 +261,7 @@ streamlit run Dashboard.py
 # 5. Evaluate & save
 ```
 
-### 2. Testing dengan Model yang Ada
+### 2. Testing with Existing Model
 ```python
 from tensorflow.keras.models import load_model
 import numpy as np
@@ -270,7 +270,7 @@ from PIL import Image
 # Load model
 model = load_model('model_rambu_lalu_lintas.h5')
 
-# Load dan preprocess image
+# Load and preprocess image
 img = Image.open('path/to/image.jpg')
 img = img.resize((224, 224))
 img_array = np.array(img) / 255.0
@@ -281,15 +281,15 @@ prediction = model.predict(img_array)
 class_idx = np.argmax(prediction)
 ```
 
-### 3. Menggunakan Dashboard
+### 3. Using Dashboard
 ```bash
-# Jalankan dashboard
+# Run dashboard
 streamlit run Dashboard.py
 
-# Atau buka browser ke:
+# Or open browser to:
 # http://localhost:8501
 
-# Upload image dan lihat hasil prediksi
+# Upload image and view prediction results
 ```
 
 ## 🔍 Evaluation Metrics
@@ -353,12 +353,12 @@ sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
 
 ## 🔮 Future Improvements
 
-- [ ] Menambah lebih banyak kategori rambu
+- [ ] Add more traffic sign categories
 - [ ] Real-time video classification
-- [ ] Model quantization untuk mobile
+- [ ] Model quantization for mobile
 - [ ] Ensemble multiple models
-- [ ] Active learning untuk improvement berkelanjutan
-- [ ] Export ke TensorFlow Lite
+- [ ] Active learning for continuous improvement
+- [ ] Export to TensorFlow Lite
 - [ ] Web API deployment
 
 ## 📚 References
@@ -377,7 +377,7 @@ sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
 
 ## 📄 License
 
-Project ini dibuat untuk keperluan akademik.
+This project was created for academic purposes.
 
 ---
 

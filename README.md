@@ -1,60 +1,60 @@
 ﻿# Traffic Sign Detection
 
-Repository ini berisi implementasi sistem deteksi rambu lalu lintas menggunakan dua pendekatan berbeda: Convolutional Neural Network (CNN) dan YOLO (You Only Look Once).
+This repository contains the implementation of a traffic sign detection system using two different approaches: Convolutional Neural Network (CNN) and YOLO (You Only Look Once).
 
-## 📁 Struktur Project
+## 📁 Project Structure
 
 ### 1. CNN MODEL
-Folder ini berisi implementasi deteksi rambu lalu lintas menggunakan pendekatan CNN klasik dengan berbagai arsitektur:
-- **Model Architecture**: MobileNet, VGG16, dan Custom CNN
-- **Dataset**: Dataset rambu lalu lintas Indonesia (cropped dan non-cropped)
+This folder contains the implementation of traffic sign detection using classic CNN approach with various architectures:
+- **Model Architecture**: MobileNet, VGG16, and Custom CNN
+- **Dataset**: Indonesian traffic sign dataset (cropped and non-cropped)
 - **Features**:
-  - Training dan testing dengan berbagai konfigurasi
-  - Dashboard untuk visualisasi hasil
-  - Model dalam format `.h5` dan `.keras`
-  - Class indices untuk mapping kategori rambu
+  - Training and testing with various configurations
+  - Dashboard for result visualization
+  - Models in `.h5` and `.keras` formats
+  - Class indices for traffic sign category mapping
 
-**File Utama:**
-- `DSP-CNN.ipynb` - Notebook training model CNN
-- `Dashboard.py` - Dashboard untuk testing dan visualisasi
-- `model_rambu_lalu_lintas.h5` - Model CNN terlatih
+**Main Files:**
+- `DSP-CNN.ipynb` - CNN model training notebook
+- `Dashboard.py` - Dashboard for testing and visualization
+- `model_rambu_lalu_lintas.h5` - Trained CNN model
 
 ### 2. YOLO MODEL
-Folder ini berisi implementasi deteksi rambu lalu lintas menggunakan YOLOv8:
+This folder contains the implementation of traffic sign detection using YOLOv8:
 - **Model**: YOLOv8n (Nano)
-- **Dataset**: Format YOLO (images + labels dalam format txt)
+- **Dataset**: YOLO format (images + labels in txt format)
 - **Features**:
   - Real-time object detection
   - Multiple training experiments (train1-train1221)
-  - Testing dan validasi
-  - Dashboard terintegrasi
+  - Testing and validation
+  - Integrated dashboard
 
-**File Utama:**
-- `DSP-YOLO.ipynb` - Notebook training YOLOv8
-- `Dashboard.py` - Dashboard untuk testing
-- `DashboardGabung.py` - Dashboard gabungan CNN dan YOLO
-- `data.yaml` - Konfigurasi dataset YOLO
-- `runs/` - Hasil training dan deteksi
+**Main Files:**
+- `DSP-YOLO.ipynb` - YOLOv8 training notebook
+- `Dashboard.py` - Dashboard for testing
+- `DashboardGabung.py` - Combined CNN and YOLO dashboard
+- `data.yaml` - YOLO dataset configuration
+- `runs/` - Training and detection results
 
-## 🚀 Cara Menggunakan
+## 🚀 How to Use
 
 ### CNN Model
-1. Buka `CNN MODEL/DSP-CNN.ipynb` untuk training
-2. Jalankan `Dashboard.py` untuk testing dengan model yang sudah dilatih
-3. Model tersimpan di folder `MODEL/`
+1. Open `CNN MODEL/DSP-CNN.ipynb` for training
+2. Run `Dashboard.py` for testing with the trained model
+3. Models are saved in the `MODEL/` folder
 
 ### YOLO Model
-1. Buka `YOLO MODEL/DSP-YOLO.ipynb` untuk training YOLOv8
-2. Gunakan `Dashboard.py` atau `DashboardGabung.py` untuk testing
-3. Hasil training tersimpan di folder `runs/detect/`
+1. Open `YOLO MODEL/DSP-YOLO.ipynb` for YOLOv8 training
+2. Use `Dashboard.py` or `DashboardGabung.py` for testing
+3. Training results are saved in the `runs/detect/` folder
 
 ## 📊 Dataset
 
-Dataset berisi berbagai kategori rambu lalu lintas Indonesia:
-- Lampu lalu lintas (hijau, kuning, merah)
-- Rambu larangan (belok kanan/kiri, parkir, berhenti, dll)
-- Rambu peringatan (zebra cross, isyarat lalu lintas, dll)
-- Rambu petunjuk dan perintah
+The dataset contains various categories of Indonesian traffic signs:
+- Traffic lights (green, yellow, red)
+- Prohibition signs (no right/left turn, no parking, no stopping, etc.)
+- Warning signs (zebra crossing, traffic signals, etc.)
+- Direction and command signs
 
 ## 🛠️ Requirements
 
@@ -66,14 +66,14 @@ opencv-python
 numpy
 pandas
 matplotlib
-streamlit (untuk dashboard)
+streamlit (for dashboard)
 ```
 
 ## 📝 Notes
 
-- File model (`.h5`, `.keras`, `.pt`) dan dataset berukuran besar mungkin tidak di-upload ke repository
-- Untuk menggunakan model, download atau train ulang menggunakan notebook yang tersedia
-- Dashboard dapat dijalankan menggunakan Streamlit
+- Model files (`.h5`, `.keras`, `.pt`) and large datasets may not be uploaded to the repository
+- To use the models, download or retrain using the available notebooks
+- Dashboard can be run using Streamlit
 
 ## 👥 Author
 
